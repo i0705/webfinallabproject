@@ -80,6 +80,7 @@ export const FilterContextProvider = ({ children }) => {
         handleSearchInputChange,
         selectedCategory,
         setSelectedCategory,
+        setSearchValue
       }}
     >
       {children}

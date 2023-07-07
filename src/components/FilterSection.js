@@ -1,10 +1,12 @@
 import React, { useState,useEffect } from "react";
 import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
+import { Button } from "../styles/Button";
+
 // import { FaSearch} from "react-icons/fa";
 
 const FilterSection = () => {
-  const { filter_products, all_products, setFilterProducts, searchValue, handleSearchInputChange, updateFilterValue, selectedCategory,setSelectedCategory } = useFilterContext();
+  const { filter_products, all_products, setFilterProducts, searchValue, handleSearchInputChange, updateFilterValue, selectedCategory,setSelectedCategory,setSearchValue } = useFilterContext();
   const [filteredProducts, setFilteredProducts] = useState(filter_products);
 // console.log(all_products)
   useEffect(() => {
@@ -16,6 +18,11 @@ const FilterSection = () => {
       return curElem[attr];
     });
     return (newVal = ["all", ...new Set(newVal)]);
+  };
+  const clearFilters = () => {
+    setSelectedCategory("All");
+    setSearchValue("");
+    setFilteredProducts(all_products);
   };
 
   const categoryData = getUniqueData(all_products, "category");
@@ -68,6 +75,11 @@ const FilterSection = () => {
             </button>
           ))}
         </div>
+      </div>
+      <div className="filter-clear">
+        <Button className="btn" onClick={clearFilters}>
+          Clear Filters
+        </Button>
       </div>
     </Wrapper>
   );
@@ -176,8 +188,11 @@ const Wrapper = styled.section`
   }
 
   .filter-clear .btn {
-    background-color: #ec7063;
-    color: #000;
+    background-color: #9C543A;
+    width:120px;
+    height:50px;
+    color: white;
+    font-size:10px;
   }
 `;
 
