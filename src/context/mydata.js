@@ -99,10 +99,7 @@
         "id": 9,
         "name": "Cheese Cake",
         "price": 1999,
-        "company": "apple",
-        "colors": [
-            "#000000"
-        ],
+       
         "image": "https://assets.epicurious.com/photos/62bdc36d9de40a39de6bd598/16:9/w_6270,h_3527,c_limit/Cheesecake_RECIPE_062922_36317.jpg",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
         "category": "cake",
@@ -112,13 +109,9 @@
     {
         "id": 10,
 "name": "Strawberry Cupcake",
-        "company": "apple",
+      
         "price": 220,
-        "colors": [
-            "#ff0000",
-            "#22D3EF",
-            "#000000"
-        ],
+      
         "image": "https://www.dessertnowdinnerlater.com/wp-content/uploads/2021/12/Strawberry-Cupcakes-Recipe-2-735x1103.jpg",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
         "category": "cupcake",
@@ -127,12 +120,9 @@
     {
         "id": 11,
         "name": "chicken roll",
-        "company": "rolex",
+       
         "price": 50,
-        "colors": [
-            "#000000",
-            "#CDD0D0"
-        ],
+       
         "image": "https://www.munatycooking.com/wp-content/uploads/2022/06/Chicken-Spring-Rolls-feature-image.jpg",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
         "category": "savory",
@@ -142,12 +132,7 @@
         "id": 12,
         "name": "Snow Spray",
         "price": 300,
-        "company": "samsung",
-        "colors": [
-            "#22D3EF",
-            "#ff0000",
-            "#000000"
-        ],
+      
         "image": "https://cdn.shopify.com/s/files/1/0547/5424/6843/products/TB2I13DidzJ8KJjSspkXXbF7VXa_2330305613.jpg?v=1616315894",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
         "featured": true,

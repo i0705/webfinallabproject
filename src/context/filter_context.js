@@ -13,17 +13,16 @@ export const FilterContextProvider = ({ children }) => {
 
   useEffect(() => {
     const filteredProducts = productsData.filter((product) => {
-      if (selectedCategory === "All") {
+      if (selectedCategory.toLowerCase() === "all") {
         return true; // Show all products when "All" category is selected
       } else {
-        return product.category === selectedCategory;
+        return product.category.toLowerCase() === selectedCategory.toLowerCase();
       }
     });
-
-    setFilterProducts(filteredProducts);
-    setFilterProducts(productsData);
+  
+    setFilterProducts(filteredProducts)
     setAllProducts(productsData);
-  }, [productsData, grid_view]);
+  }, [productsData, selectedCategory]);
 
   const setListView = () => {
     setGridView(false);
@@ -65,12 +64,7 @@ export const FilterContextProvider = ({ children }) => {
 
     setFilterProducts(filteredProducts);
   };
-  const updateFilterValue = (category) => {
-    setSelectedCategory(category); 
-    // Call a function to update the filtered products based on the selected category
-    // For example, you can define a function setFilteredProducts in the filter_context and call it here
-    setFilterProducts(category);
-  };
+ 
 
   return (
     <FilterContext.Provider
@@ -85,7 +79,7 @@ export const FilterContextProvider = ({ children }) => {
         searchValue,
         handleSearchInputChange,
         selectedCategory,
-        setSelectedCategory,updateFilterValue
+        setSelectedCategory,
       }}
     >
       {children}

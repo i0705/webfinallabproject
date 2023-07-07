@@ -1,27 +1,44 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
 // import { FaSearch} from "react-icons/fa";
 
 const FilterSection = () => {
-  
-  const { filter_products,all_products, setFilterProducts,searchValue,handleSearchInputChange,updateFilterValue,selectedCategory } = useFilterContext();
-  const [filteredProducts, setFilteredProducts] = useState(all_products);
+  const { filter_products, all_products, setFilterProducts, searchValue, handleSearchInputChange, updateFilterValue, selectedCategory,setSelectedCategory } = useFilterContext();
+  const [filteredProducts, setFilteredProducts] = useState(filter_products);
+// console.log(all_products)
+  useEffect(() => {
+    setFilteredProducts(filter_products);
+  }, [filter_products]);
+
   const getUniqueData = (data, attr) => {
     let newVal = data.map((curElem) => {
       return curElem[attr];
     });
     return (newVal = ["all", ...new Set(newVal)]);
   };
+
   const categoryData = getUniqueData(all_products, "category");
   const handleCategoryClick = (category) => {
-    if (category === "all") {
+    setSelectedCategory(category);
+  
+    if (category.toLowerCase() === "all") {
+      console.log("All Products:", all_products);
       setFilteredProducts(all_products);
     } else {
-      const filtered = all_products.filter((product) => product.category === category);
+      const filtered = all_products.filter(
+        (product) => product.category.toLowerCase() === category.toLowerCase()
+      );
+      console.log("Filtered Products:", filtered);
       setFilteredProducts(filtered);
     }
   };
+
+  
+  
+  
+  
+
   return (
     <Wrapper>
       <div className="filter-search">
@@ -31,36 +48,31 @@ const FilterSection = () => {
             name="text"
             placeholder="Search"
             value={searchValue}
-            
             onChange={handleSearchInputChange}
           />
-          
-         
         </form>
       </div>
       <div className="filter-category">
         <h3>Category</h3>
         <div>
-          {categoryData.map((curElem, index) => {
-            return (
-  <button
-    key={index}
-    type="button"
-    name="category"
-    value={curElem}
-    className={curElem === selectedCategory ? "active" : ""}
-    onClick={() => handleCategoryClick(curElem)}
-  >
-    {curElem}
-  </button>
-);
-          })}
+          {categoryData.map((curElem, index) => (
+            <button
+              key={index}
+              type="button"
+              name="category"
+              value={curElem}
+              className={curElem === selectedCategory ? "active" : ""}
+              onClick={() => handleCategoryClick(curElem)}
+            >
+              {curElem}
+            </button>
+          ))}
         </div>
       </div>
-      
     </Wrapper>
   );
 };
+
 
 const Wrapper = styled.section`
   padding: 5rem 0;
