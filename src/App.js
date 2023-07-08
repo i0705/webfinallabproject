@@ -12,6 +12,8 @@ import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { FilterContextProvider } from "./context/filter_context";
+import CheckoutPage from "./components/CheckoutPage";
+import Login from "./Login";
 const App = () => {
   const theme={
     colors: {
@@ -50,9 +52,12 @@ const App = () => {
       <Products />
     </FilterContextProvider>} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Error />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          
         </Routes>
         <Footer />
       </Router>
