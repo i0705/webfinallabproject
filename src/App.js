@@ -13,6 +13,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { FilterContextProvider } from "./context/filter_context";
 import CheckoutPage from "./components/CheckoutPage";
+import ConfirmationPage from "./components/ConfirmationPage";
 import Login from "./Login";
 const App = () => {
   const theme={
@@ -57,6 +58,8 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Error />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/confirmation" element={<ConfirmationPage />} />
+
           
         </Routes>
         <Footer />
